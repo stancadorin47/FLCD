@@ -1,0 +1,24 @@
+N=program cmpdstmt decllist declaration type1 arraydecl type stmtlist stmt simplstmt assignstmt expression term factor iostmt structstmt ifstmt whilestmt condition RELATION
+T=start> VAR ; pct | IDENTIFIER : CHEEMS BEEMS DOGE ARRAY [ nr ] BEGIN END = - / * ( ) citireInCafea tzipaPeEcran daca paPanaCand dacaDoarCaNuAsaCiAsa < | <= | = | <> | >= | >
+S=program
+P
+program->VAR decllist ; cmpdstmt pct
+decllist->declaration | declaration ; decllist
+declaration->IDENTIFIER : type
+type1->CHEEMS | BEEMS | DOGE
+arraydecl->type1 ARRAY [ nr ]
+type->type1 | arraydecl
+cmpdstmt->BEGIN stmtlist END
+stmtlist->stmt | stmt ; stmtlist
+stmt->simplstmt | structstmt
+simplstmt->assignstmt | iostmt
+assignstmt->IDENTIFIER = expression
+expression->expression + | - term | term
+term->term * | / factor | factor
+factor->( expression ) | ( IDENTIFIER | CONSTANT)
+iostmt->( citireInCafea | tzipaPeEcran ) ( IDENTIFIER )
+structstmt->cmpdstmt | daca | paPanaCand
+ifstmt-> daca  ( condition ) { stmt } [ dacaDoarCaNuAsaCiAsa { stmt } ]
+whilestmt-> paPanaCand condition { stmt }
+condition->expression RELATION expression
+RELATION->< | <= | = | <> | >= | >

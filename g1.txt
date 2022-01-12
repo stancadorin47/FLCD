@@ -1,0 +1,8 @@
+N=S A
+T=( ) x ,
+S=S
+P
+S->( A )
+S->x
+A->S
+A->A , S
